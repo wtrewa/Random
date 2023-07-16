@@ -5,9 +5,12 @@ const router = require('./Routes/UserRoute');
 const prouter = require("./Routes/PostRoute")
 const auth = require('./Middleware/auth');
 require('dotenv').config()
+const cors = require('cors');
 
 const app = express();
+
 app.use(express.json())
+app.use(cors())
 app.use('/user',router)
 app.use('/post',prouter)
 
